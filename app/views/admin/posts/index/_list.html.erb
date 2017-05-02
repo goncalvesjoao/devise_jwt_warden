@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+  <tr>
+    <td class="text-center"><%= post.id %></td>
+    <td class="text-justify"><%= post.title %></td>
+    <td class="text-right">
+      <%= link_to fa_icon('eye'), admin_post_path(post, context_params) %> |
+      <%= link_to fa_icon('pencil'), edit_admin_post_path(post, context_params) %> |
+      <%= link_to fa_icon('trash'), admin_post_path(post, context_params), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
+
+<% if @posts.empty? && @posts.current_page < 2 %>
+  <td colspan="4" class="text-center">no data yet</td>
+<% elsif !@posts.last_page? %>
+  <tr id="load_more" class="text-center">
+    <td colspan="4"><%= link_to 'load more', admin_posts_path(context_params.merge(page: @posts.next_page)), id: 'load_more_link', remote: true %></td>
+  </tr>
+<% end %>

@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    "transform-function-bind",
+    "transform-do-expressions",
+    "transform-export-extensions",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread",
+    "syntax-trailing-function-commas"
+  ]
+}

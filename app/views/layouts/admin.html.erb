@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="YABP backend">
+    <meta name="author" content="João Gonçalves: https://github.com/goncalvesjoao">
+    <%= csrf_meta_tags %>
+
+    <title>[ADMIN] Yet another Blog platform</title>
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/admin/header' %>
+
+    <div class="container mt-2">
+      <%= render 'layouts/admin/messages' %>
+
+      <div class="row row-offcanvas row-offcanvas-right justify-content-center">
+        <%= yield %>
+      </div>
+
+      <%= render 'layouts/admin/footer' %>
+      <%= render 'layouts/admin/scripts' %>
+    </div>
+  </body>
+</html>

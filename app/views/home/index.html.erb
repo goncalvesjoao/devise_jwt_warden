@@ -1,0 +1,7 @@
+Hello!
+
+<% if user_signed_in? %>
+  <%= link_to 'log out', destroy_user_session_path %>
+<% else %>
+  <%= link_to 'admin', admin_path %> or <%= link_to 'web app', web_app_path %>
+<% end %>

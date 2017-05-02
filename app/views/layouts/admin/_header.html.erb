@@ -1,0 +1,23 @@
+<nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <%= link_to('YABP', admin_path, class: 'navbar-brand') %>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <%= li_link('Posts', admin_posts_path, controller: 'admin/posts') %>
+      <% end %>
+    </ul>
+
+    <ul class="navbar-nav my-2 my-lg-0">
+      <% if user_signed_in? %>
+        <%= li_link('Settings', admin_settings_path, controller: 'admin/home', action: 'settings') %>
+        <%= li_link('Profile', admin_profile_path, controller: 'admin/home', action: 'profile') %>
+        <%= li_link('Log out', destroy_user_session_path) %>
+      <% end %>
+    </ul>
+  </div>
+</nav>

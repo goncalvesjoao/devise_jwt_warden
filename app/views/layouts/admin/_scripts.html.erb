@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  $(function() {
+    var scope = yabp["<%= controller_name %>"];
+
+    if (scope && typeof scope.init === "function") { scope.init(); }
+  });
+</script>

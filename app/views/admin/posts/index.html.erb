@@ -1,0 +1,29 @@
+<div class="col-12 col-md-9">
+  <div class="d-flex justify-content-end">
+    <h2 class="mr-auto">
+      Posts
+      <span class="badge badge-default">total: <%= @posts.total_count %></span>
+    </h2>
+
+    <p><%= link_to 'New Post', new_admin_post_path, class: 'btn btn-primary', role: 'button' %></p>
+    <p class="hidden-md-up ml-1"><%= offcanvas_toggle_button('Filters') %></p>
+  </div>
+
+  <table class="table thead-inverse table-sm table-striped">
+    <thead>
+      <tr>
+        <th class="text-center"><%= sort_link(@q, :id, 'ID') %></th>
+        <th><%= sort_link(@q, :title, 'Title') %></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render 'admin/posts/index/list' %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-6 col-md-3 sidebar-offcanvas">
+  <%= render 'admin/posts/index/sidebar' %>
+</div>

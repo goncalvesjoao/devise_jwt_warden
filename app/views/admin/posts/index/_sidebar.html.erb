@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">Filters</div>
+  <div class="card-block">
+    <%= search_form_for @q, url: admin_posts_path do |f| %>
+      <div class="form-inputs">
+        <%= f.input :title_cont, required: false %>
+      </div>
+
+      <div class="form-actions text-right">
+        <%= f.button :submit, 'Filter', class: 'btn btn-outline-primary btn-sm' %>
+      </div>
+    <% end %>
+  </div>
+</div>

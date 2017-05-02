@@ -1,0 +1,13 @@
+<div class="col-12">
+  <div class="d-flex justify-content-end">
+    <h2 class="mr-auto">
+      Editing Post
+      <span class="badge badge-default">id: <%= @post.id %></span>
+    </h2>
+
+    <p><%= link_to fa_icon('eye', text: 'Show'), admin_post_path(@post, context_params), class: 'btn btn-primary', role: 'button' %></p>
+    <p><%= link_to fa_icon('arrow-left', text: 'See all'), admin_posts_path(context_params), class: 'btn btn-secondary ml-1', role: 'button' %></p>
+  </div>
+
+  <%= render 'form', post: @post, url: admin_post_path(@post) %>
+</div>
